@@ -1,0 +1,22 @@
+<h3> List of Menus </h3>
+
+<table>
+  <th> Menu Type </th>
+
+  <% if can? :read, @menus %>
+    <th> Add Items</th>
+  <% end %>
+
+  <% @menus.each do |menu| %>
+    <tr>
+      <td>
+        <%= menu.display_name %>
+      </td>
+      <% if can? :read, @menus %>
+        <td>
+          <%= link_to 'Add Item', new_menu_menu_item_path(menu) %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+list_of_menus = ['Shirts', 'Trousers', 'Drinks', 'Utensils']
+
+list_of_menus.each do |menu|
+  Menu.create(display_name: menu, value: menu.downcase)
+end
